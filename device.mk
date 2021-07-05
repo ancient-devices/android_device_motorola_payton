@@ -60,6 +60,13 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
+# GCam
+PRODUCT_PACKAGES += \
+    GoogleCamera
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/GoogleCamera/privapp-permissions-googlecamera.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-googlecamera.xml
+
 # Init
 PRODUCT_PACKAGES += \
     init.payton.rc
