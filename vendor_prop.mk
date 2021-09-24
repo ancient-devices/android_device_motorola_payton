@@ -30,7 +30,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.latch_unsignaled=0 
+    debug.sf.latch_unsignaled=0 \
+    ro.surface_flinger.supports_background_blur=1 \
+    persist.sys.sf.disable_blurs=1 \
+    ro.sf.blurs_are_expensive=1
     
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
