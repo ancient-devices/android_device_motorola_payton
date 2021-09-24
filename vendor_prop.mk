@@ -28,6 +28,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.eis.enable=1 \
     persist.vendor.camera.ois.disable=1
 
+# Display
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.latch_unsignaled=0 
+    
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.fm.use_audio_session=true
