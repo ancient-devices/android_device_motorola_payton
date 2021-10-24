@@ -50,6 +50,6 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 603979776
 TARGET_HAS_NO_WLAN_STATS := true
 
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-
+RELAX_USES_LIBRARY_CHECK=true
 # inherit from the proprietary version
 include vendor/motorola/payton/BoardConfigVendor.mk
