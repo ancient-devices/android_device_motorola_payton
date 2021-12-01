@@ -69,7 +69,8 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.payton.rc
+    init.payton.rc \
+    fstab.qcom
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
