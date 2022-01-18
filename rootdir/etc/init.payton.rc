@@ -25,9 +25,32 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+on early-init
+    setprop ro.boot.product.hardware.sku qcril
+
 on post-fs
     symlink /dev/block/bootdevice/by-name/oem_b /dev/block/bootdevice/by-name/vendor_b
     symlink /dev/block/bootdevice/by-name/oem_a /dev/block/bootdevice/by-name/vendor_a
 
 on post-fs-data
     mkdir /data/.fps 0770 system system
+
+on boot
+# Start qcrild
+    start vendor.qcrild
+    start vendor.qcrild2
+# Set user and group for homebutton nodes
+    chown system system /sys/homebutton/enable
+    chown system system /sys/homebutton/enable_off
+    chown system system /sys/homebutton/haptic
+    chown system system /sys/homebutton/haptic_off
+    chown system system /sys/homebutton/key
+    chown system system /sys/homebutton/key_hold
+    chown system system /sys/homebutton/key_dbltap
+    chown system system /sys/homebutton/key_left
+    chown system system /sys/homebutton/key_right
+    chown system system /sys/homebutton/key_screenoff
+    chown system system /sys/homebutton/key_screenoff_hold
+    chown system system /sys/homebutton/key_screenoff_dbltap
+    chown system system /sys/homebutton/key_screenoff_left
+    chown system system /sys/homebutton/key_screenoff_right
