@@ -45,7 +45,6 @@ import com.moto.actions.R;
 public class DozeSettingsFragment extends PreferenceFragment implements OnPreferenceChangeListener,
         CompoundButton.OnCheckedChangeListener {
 
-    private TextView mTextView;
     private View mSwitchBar;
 
     private SwitchPreference mAlwaysOnDisplayPreference;
@@ -116,10 +115,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
 
         boolean dozeEnabled = MotoActionsSettings.isDozeEnabled(getActivity());
 
-        mTextView = view.findViewById(R.id.switch_text);
-        mTextView.setText(getString(dozeEnabled ?
-                R.string.switch_bar_on : R.string.switch_bar_off));
-
         mSwitchBar = view.findViewById(R.id.switch_bar);
         Switch switchWidget = mSwitchBar.findViewById(android.R.id.switch_widget);
         switchWidget.setChecked(dozeEnabled);
@@ -144,7 +139,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
     public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
         MotoActionsSettings.enableDoze(getActivity(), isChecked);
 
-        mTextView.setText(getString(isChecked ? R.string.switch_bar_on : R.string.switch_bar_off));
         mSwitchBar.setActivated(isChecked);
 
         if (!isChecked) {
