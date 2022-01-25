@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_payton.mk
+    $(LOCAL_DIR)/ancient_payton.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_payton-user \
-    aosp_payton-userdebug \
-    aosp_payton-eng
+    ancient_payton-user \
+    ancient_payton-userdebug \
+    ancient_payton-eng

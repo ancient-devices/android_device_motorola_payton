@@ -14,17 +14,26 @@
 # limitations under the License.
 #
 
-# Inherit some common AOSP stuff.
+# Inherit some common Ancient stuff.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
 
-# Inherit some common PixelExperience stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common Ancient stuff.
+$(call inherit-product, vendor/ancient/config/common_full_phone.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_GAPPS_ARCH := arm64
-
+#Ancient Stuff
+ANCIENT_GAPPS := true
+TARGET_USES_BLUR := false
+ANCIENT_OFFICIAL := true
+FORCE_OTA := true
+TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_STOCK_ARCORE := false
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+TARGET_FACE_UNLOCK_SUPPORTED := true
+IS_PHONE := true
 # Device
 $(call inherit-product, device/motorola/payton/device.mk)
 
@@ -64,7 +73,7 @@ endif
 
 # Device identifiers
 PRODUCT_DEVICE := payton
-PRODUCT_NAME := aosp_payton
+PRODUCT_NAME := ancient_payton
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := moto x4
 PRODUCT_MANUFACTURER := motorola
